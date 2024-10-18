@@ -1,0 +1,326 @@
+body {
+  width: 100vh;
+  height: 100vw;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/*Posisjonering og plassering av knappen med lyd.*/
+.playBotton {
+  position: absolute;
+  z-index: 8;
+  right: 1%;
+}
+
+/*Dette er fargene for vannet.*/
+.waterBackgroundColor {
+  width: 100%;
+  height: 100%;
+  background: rgb(254, 240, 201);
+  background: radial-gradient(
+    circle,
+    rgba(254, 240, 201, 1) 0%,
+    rgba(128, 176, 164, 1) 30%,
+    rgb(0, 250, 229) 100%
+  );
+  top: -30%;
+  position: absolute;
+  z-index: 1;
+}
+/*Dette er bølge effektene.*/
+.water {
+  opacity: 20%;
+  width: 600%;
+  height: 40%;
+  top: 20%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  animation: waves 12s infinite;
+}
+/*Animasjonen til bølgene.*/
+@keyframes waves {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: -25%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+/*Dette er tilbake knappen på toppen til venstre som tar det tilbake til hovedsiden.*/
+.arrow {
+  width: 10%;
+  position: absolute;
+  top: -4%;
+  left: 1%;
+  z-index: 8;
+  rotate: 180deg;
+}
+.arrow:hover {
+  rotate: 160deg;
+}
+
+/*Dette er for boomerangen som flyr forbi.*/
+.boomerang {
+  width: 7%;
+  position: absolute;
+  top: 5%;
+  z-index: 5;
+  animation: linear infinite;
+  animation-name: boomerangAnimation;
+  animation-duration: 7s;
+}
+/*Animasjonen til boomerangen.*/
+@keyframes boomerangAnimation {
+  0% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  14% {
+    left: 43%;
+  }
+  25% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  37% {
+    left: 43%;
+  }
+  50% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  63% {
+    left: 43%;
+  }
+  75% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  87% {
+    left: 43%;
+  }
+  100% {
+    left: 93%;
+    rotate: 0deg;
+  }
+}
+
+/*Dette er for den spinnende logoen som er opp i høyre hjørne.*/
+.boomerangBeachBarLogo {
+  width: 15%;
+  top: 6vh;
+  left: 83vw;
+  position: absolute;
+  z-index: 13;
+  animation: boomerangBeachBarLogoAnimation 3s linear infinite;
+}
+/*Animasjonen til boomerangen*/
+@keyframes boomerangBeachBarLogoAnimation {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 20deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: -20deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+/*Dette er faded farger vi har for sanden.*/
+.sandColor {
+  opacity: 65%;
+  width: 100%;
+  height: 70%;
+  background: rgb(67, 30, 21);
+  background: linear-gradient(
+    0deg,
+    rgba(67, 30, 21, 1) 2%,
+    rgba(255, 220, 166, 1) 80%,
+    rgba(254, 240, 201, 1) 100%
+  );
+  position: absolute;
+  top: 30%;
+  z-index: 3;
+}
+/*Dette possisjonering og plassering av sanden.*/
+.sand {
+  width: 100%;
+  height: 70%;
+  top: 30%;
+  position: absolute;
+  z-index: 2;
+}
+
+/*Dette er drikke menyen sin bakgrunn.*/
+.drinkMeny {
+  width: 30%;
+  height: 85%;
+  background: #d9ac36;
+  z-index: 6;
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  animation: menyAppear 3s linear;
+}
+
+/*Dette er matmenyen sin bakgrunn.*/
+.foodMeny {
+  width: 30%;
+  height: 85%;
+  background: #d6742b;
+  position: absolute;
+  z-index: 6;
+  left: 47%;
+  top: 10%;
+  animation: menyAppear 3s linear;
+}
+
+/*Dette er animasjonen for at menyene kommer opp fra bunnen av skjermen.*/
+@keyframes menyAppear {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 10%;
+  }
+}
+
+/*Her kommer menyen.*/
+/*Dette er tittelen på drikke menyen.*/
+.drinkMenuTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 250%;
+  font-family: BullettoKilla;
+  color: #d6742b;
+}
+/*Dette er tittelen på spise menyen.*/
+.foodMenuTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 250%;
+  font-family: BullettoKilla;
+  color: #431e15;
+}
+
+/*Dette er listen for mat og drikke.*/
+.drinkList,
+.foodList {
+  font-size: 175%;
+  list-style-type: none;
+  font-family: sans-serif;
+  display: block;
+}
+/*Dette er listen for prisene.*/
+.listPrices {
+  font-size: 175%;
+  list-style-type: none;
+  font-family: sans-serif;
+  position: absolute;
+  right: 5%;
+  top: 13%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Dette er for plaseringen for koalaen på mat menyen.*/
+.koala {
+  width: 15%;
+  position: absolute;
+  top: 5%;
+  left: 7%;
+  z-index: 5;
+  rotate: 330deg;
+  display: block;
+}
+
+/*Dette er drikke logoene sine plasseringer og størrelse.*/
+.cocaCola {
+  width: 23%;
+  left: 70%;
+  position: absolute;
+  z-index: 5;
+  display: block;
+}
+.fanta {
+  width: 39%;
+  left: 35%;
+  position: absolute;
+  z-index: 5;
+  display: block;
+}
+.pepsi {
+  width: 30%;
+  top: 80%;
+  position: absolute;
+  left: 51%;
+  z-index: 5;
+  display: block;
+}
+
+/*Dette er plaseringen for surfebrettet i bakrgunnen bak menyen.*/
+.surfboard {
+  width: 30%;
+  top: 35%;
+  left: 70%;
+  position: absolute;
+  z-index: 3;
+}
+
+/*Byron Bayson som står litt i bakgrunn.*/
+.byronBayson {
+  width: 12%;
+  position: absolute;
+  left: 4%;
+  top: 18%;
+  z-index: 3;
+}
+
+/*Dette er plasseringen for fotskrittene som er i bakgrunnen.*/
+.footprints {
+  width: 13%;
+  opacity: 22%;
+  rotate: 270deg;
+  left: 0%;
+  top: 35%;
+  position: absolute;
+  z-index: 4;
+}
+
+/*Dette er for hendene som holder rundt menyen.*/
+.handsHoldingMenu {
+  width: 113.2%;
+  top: -21.2%;
+  left: -9.5%;
+  position: absolute;
+  z-index: 7;
+  animation: handsHoldingMenuAnimation 3s linear;
+}
+/*Animasjonen av hendene som kommer opp med menyen.*/
+@keyframes handsHoldingMenuAnimation {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -21.2%;
+  }
+}
+
+/*Dette er fonten vi brukte på alle overskriftene.*/
+@font-face {
+  font-family: BullettoKilla;
+  src: url(../fonts/Bulletto\Killa.ttf);
+}

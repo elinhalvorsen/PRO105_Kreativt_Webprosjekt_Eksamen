@@ -1,0 +1,356 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d9ac36;
+  margin: 0;
+  padding: 0;
+}
+
+/*Posisjonering, størrelse og animasjon av skyene.*/
+.cloud1,
+.cloud2,
+.cloud3 {
+  position: absolute;
+  width: 35%;
+  animation-name: cloudPulsate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+/*Plassering av skyene.*/
+.cloud1 {
+  top: 8%;
+  left: 2%;
+  z-index: 2;
+}
+.cloud2 {
+  top: 3%;
+  left: 32%;
+  z-index: 3;
+}
+.cloud3 {
+  top: 8%;
+  right: 2%;
+}
+/*Animasjon av skyene, så det ser ut som de pulserer.*/
+@keyframes cloudPulsate {
+  0% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+}
+/*Solen bak skyene*/
+.sun {
+  position: absolute;
+  top: 2%;
+  width: 11%;
+  height: 22%;
+  left: 27%;
+  border-radius: 100%;
+  background-color: rgb(248, 239, 184);
+  z-index: 1;
+}
+
+/*Posisjonering, størrelse og animasjon av fuglene.*/
+.bird1,
+.bird2,
+.bird3,
+.bird4 {
+  position: absolute;
+  width: 13%;
+  animation-name: flyingBirds;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+/*Plassering av skyene.*/
+.bird1 {
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+}
+.bird2 {
+  top: 20%;
+  left: 27%;
+}
+.bird3 {
+  left: 45%;
+  z-index: 3;
+}
+.bird4 {
+  top: 20%;
+  right: 5%;
+}
+/*Animasjon av fuglene.*/
+@keyframes flyingBirds {
+  0% {
+    height: 20%;
+  }
+  50% {
+    height: 18.5%;
+  }
+  100% {
+    height: 20%;
+  }
+}
+
+/*Posisjonering, plassering og størrelse av logoen til baren.*/
+.boomerangBeachBarLogo {
+  position: absolute;
+  top: 16%;
+  left: 38%;
+  font-size: 4rem;
+  font-family: BullettoKilla;
+  z-index: 3;
+  cursor: default;
+}
+
+/*Fargen på skriften til logoen*/
+.boomerangLogo {
+  color: #431e15;
+}
+.beachLogo {
+  color: #d6742b;
+}
+.barLogo {
+  color: #d04f2c;
+}
+
+/*Posisjonering, plassering, størrelse og animasjon av boomerangen.*/
+.boomerang {
+  position: absolute;
+  width: 6.5%;
+  top: 10%;
+  left: 7%;
+  animation-name: boomerangAnimation;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+/*Animasjonen av boomerangen*/
+@keyframes boomerangAnimation {
+  0% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  25% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  50% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  75% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  100% {
+    left: 93%;
+    rotate: 0deg;
+  }
+}
+
+/*Posisjonering, plassering og størrelse av Byron Bayson med hover*/
+.byronBayson {
+  position: absolute;
+  width: 20%;
+  left: 4%;
+  bottom: 15%;
+  z-index: 2;
+}
+/*Posisjonering, plassering og størrelse av Byron sine snakkebobler med hover.*/
+.byronBaysonTxt,
+.kangarooTxt,
+.footprintsTxt {
+  position: absolute;
+  width: 13%;
+  left: 22%;
+  bottom: 36%;
+  border: 8px solid white;
+  border-radius: 15px;
+  background-color: white;
+  visibility: hidden;
+  font-family: sans-serif;
+  z-index: 2;
+}
+/*Snakkeboble der Byron introduserer seg selv. Med hover.*/
+.byronBayson:hover ~ .byronBaysonTxt {
+  visibility: visible;
+}
+/*Kangaroo posisjonering og animasjon.*/
+.kangaroo {
+  position: absolute;
+  width: 19%;
+  right: 55%;
+  bottom: 11%;
+  animation-name: kangarooAnimation;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+/*Snakkeboble der Byron forteller en funfact om kangarooer. Med hover.*/
+.kangaroo:hover ~ .kangarooTxt {
+  visibility: visible;
+}
+/*Animasjon av kangarooen, slik at den beveger, snur og hopper.*/
+@keyframes kangarooAnimation {
+  0% {
+    bottom: 0%;
+    left: 25%;
+    transform: scaleX(1);
+  }
+  10% {
+    bottom: 7%;
+  }
+  49% {
+    bottom: 0%;
+    transform: scaleX(1);
+  }
+  50% {
+    bottom: 7%;
+    left: 58%;
+    transform: scaleX(-1);
+  }
+  51% {
+    bottom: 0%;
+    transform: scaleX(-1);
+  }
+  100% {
+    bottom: 0%;
+    left: 25%;
+    transform: scaleX(-1);
+  }
+}
+
+/*Posisjonering og animasjon av skiltet til beach cluben.*/
+.bondiBeachSign,
+.resturantSign {
+  position: absolute;
+  animation-name: tiltingSign;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+/*Animasjon på skiltet så det vipper fram og tilbake.*/
+@keyframes tiltingSign {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.7deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-0.7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/*Plassering av link til meny.*/
+.bondiBeachSign {
+  width: 29%;
+  right: 4%;
+  bottom: 17%;
+}
+/*Plassering av link til meny.*/
+.resturantSign {
+  width: 20%;
+  right: 10%;
+  bottom: 21%;
+}
+
+/*Posisjonering, størrelse og animasjon av fotspor i sanda.*/
+.footprints1,
+.footprints2 {
+  position: absolute;
+  width: 7%;
+  animation-name: footprintsShowing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+/*Plassering av fotsporene.*/
+.footprints1 {
+  right: 20%;
+  bottom: 2%;
+}
+.footprints2 {
+  right: 10%;
+  bottom: 2%;
+  transform: scale(-1) rotate(120deg);
+}
+/*Hover over fotsporene, så det kommer snakkeboble med tekst.*/
+.footprints1:hover ~ .footprintsTxt,
+.footprints2:hover ~ .footprintsTxt {
+  visibility: visible;
+}
+/*Animasjonen til fotsporene.*/
+@keyframes footprintsShowing {
+  0% {
+    opacity: 10%;
+  }
+  50% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 10%;
+  }
+}
+
+/*Posisjonering, størrelse og animasjon av vannet.*/
+.water {
+  position: absolute;
+  background: #80b0a4;
+  width: 100%;
+  height: 3%;
+  bottom: 19%;
+  animation-name: waterAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+/*Animasjon som gjør at vannet beveger seg opp og ned.*/
+@keyframes waterAnimation {
+  0% {
+    height: 2%;
+  }
+  50% {
+    height: 4%;
+  }
+  100% {
+    height: 2%;
+  }
+}
+/*Posisjonering, plassering og størrelse av sanden på bunn av skjermen.*/
+.sand {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(67, 30, 21, 1) 2%,
+    rgba(255, 220, 166, 1) 80%,
+    rgba(254, 240, 201, 1) 100%
+  );
+  z-index: 1;
+}
+/*Fonten vi har brukt til overskrifter*/
+@font-face {
+  font-family: BullettoKilla;
+  src: url(../fonts/Bulletto\Killa.ttf);
+}

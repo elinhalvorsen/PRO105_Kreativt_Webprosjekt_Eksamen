@@ -1,0 +1,821 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+div {
+  height: 100vh;
+  width: 100vw;
+}
+
+/*Posisjonering og plassering av knappen med lyd.*/
+.playBotton {
+  position: absolute;
+  z-index: 1;
+  right: 1%;
+}
+
+/*Bakgrunn dagtid.*/
+.day {
+  background: rgb(217, 172, 54);
+  background: linear-gradient(
+    0deg,
+    rgba(217, 172, 54, 1) 0%,
+    rgba(128, 176, 164, 1) 20%
+  );
+  display: flex;
+  z-index: 3;
+}
+
+/*logo og animasjon for logoen*/
+.boomerangBeachBarLogo {
+  width: 15vw;
+  position: fixed;
+  top: 6vh;
+  left: 83vw;
+  animation: boomerangBeachBarLogoAnimation 2s linear infinite;
+  z-index: 2;
+}
+/*Animasjon av logoen*/
+@keyframes boomerangBeachBarLogoAnimation {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 20deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: -20deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+/*Posisjonering og styling av pilen*/
+.arrow {
+  width: 10%;
+  position: fixed;
+  top: -4vh;
+  rotate: 180deg;
+}
+.arrow:hover {
+  rotate: 160deg;
+}
+
+/*Posisjonering og styling for dagtid elementene*/
+.sun {
+  position: sticky;
+  left: 40vw;
+  top: 5vh;
+  width: 20%;
+  height: 40%;
+  background-color: rgb(248, 239, 184);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*Posisjonering, styling og animasjon for skyene*/
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4 {
+  position: absolute;
+  animation: cloudPulsate 3s infinite;
+}
+.cloud1 {
+  width: 25%;
+  top: 15vh;
+  left: 10vw;
+}
+.cloud2 {
+  width: 20%;
+  top: 10vh;
+  left: 5vw;
+}
+.cloud3 {
+  width: 25%;
+  top: 12vh;
+  left: 50vw;
+}
+.cloud4 {
+  width: 15%;
+  top: 10vh;
+  left: 65vw;
+}
+/*Animasjonen av skyene.*/
+@keyframes cloudPulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*Posisjonering, styling og animasjon for fuglene*/
+.birds {
+  width: 30%;
+  height: 20%;
+  position: absolute;
+  top: 15vh;
+  left: 20vw;
+  animation: flyingBirds 10s infinite;
+}
+@keyframes flyingBirds {
+  0% {
+    left: -25%;
+    transform: scaleX(1);
+    top: 5vh;
+  }
+
+  49% {
+    transform: scaleX(1);
+    top: 35vh;
+  }
+  50% {
+    left: 100%;
+    transform: scaleX(-1);
+  }
+  51% {
+    transform: scaleX(-1);
+    top: 35vh;
+  }
+  100% {
+    left: -25%;
+    top: 5vh;
+    transform: scaleX(-1);
+  }
+}
+
+/*Posisjonering og styling av aktivitetenes overskrift og tekst elementer på dagtid */
+.activitiesDay {
+  width: 80vw;
+  height: 20vh;
+  position: absolute;
+  top: 25vh;
+  left: 4vw;
+  display: flex;
+  z-index: 7;
+  flex-direction: row;
+  column-gap: 10rem;
+  color: turquoise;
+}
+.activitiesDay,
+.activitiesNight {
+  position: relative;
+  font-family: BullettoKilla;
+  cursor: default;
+}
+.activityTxt1 {
+  width: 18vw;
+  height: 8vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: -8vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTxt2 {
+  width: 20vw;
+  height: 10vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTxt3 {
+  width: 20vw;
+  height: 10vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 40vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTitleDay1:hover ~ .activityTxt1,
+.activityTitleDay2:hover ~ .activityTxt2,
+.activityTitleDay3:hover ~ .activityTxt3 {
+  visibility: visible;
+  transform: scale(1.2);
+}
+
+.boomerang {
+  width: 7%;
+  position: absolute;
+  top: 35vh;
+  z-index: 5;
+  animation: linear infinite;
+  animation-name: boomerangAnimation;
+  animation-duration: 7s;
+}
+@keyframes boomerangAnimation {
+  0% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  14% {
+    left: 43%;
+  }
+  25% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  37% {
+    left: 43%;
+  }
+  50% {
+    left: 93%;
+    rotate: 0deg;
+  }
+  63% {
+    left: 43%;
+  }
+  75% {
+    left: 3%;
+    rotate: 350deg;
+  }
+  87% {
+    left: 43%;
+  }
+  100% {
+    left: 93%;
+    rotate: 0deg;
+  }
+}
+
+/*Posisjonering og styling av palmetreet og Uluru fjellet på dagtid */
+.palmtreeDay {
+  width: 30%;
+  position: absolute;
+  top: 35vh;
+  left: 70vw;
+  display: flex;
+  z-index: 1;
+}
+
+.uluruDay {
+  width: 60%;
+  position: absolute;
+  top: 36vh;
+  left: -15vw;
+  display: flex;
+  z-index: 1;
+}
+
+/*Posisjonering, styling og animasjon for surfebrettene og de andre aktivitetsobjektene*/
+.surfboards {
+  width: 20%;
+  height: 40%;
+  position: absolute;
+  top: 55vh;
+  left: 5vw;
+  display: flex;
+  z-index: 3;
+  animation: tipSurfboards 1s forwards;
+  animation-delay: 2.5s;
+}
+@keyframes tipSurfboards {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+    top: 60vh;
+  }
+}
+
+.volleyball {
+  width: 3%;
+  height: 6%;
+  position: absolute;
+  top: 54vh;
+  left: 64vw;
+  display: flex;
+  z-index: 3;
+  animation: peoplePlayingVolleyball 2.5s ease-in forwards;
+}
+
+.rugbyball {
+  width: 3%;
+  height: 7%;
+  position: absolute;
+  top: 82vh;
+  left: 22vw;
+  display: flex;
+  z-index: 3;
+}
+
+/*Posisjonering, styling og animasjon for Byron*/
+.byronBayson {
+  width: 17%;
+  position: absolute;
+  top: 60vh;
+  left: 70vw;
+  display: flex;
+  z-index: 4;
+  animation: byronBaysonDesepears 5s forwards;
+  animation-delay: 20s;
+}
+@keyframes byronBaysonDesepears {
+  0% {
+    transform: scaleX(-1);
+    left: 70vw;
+  }
+  100% {
+    transform: scaleX(-1);
+    left: 100vw;
+  }
+}
+.byronBaysonTxt {
+  width: 15%;
+  height: 15%;
+  position: absolute;
+  top: 42vh;
+  left: 65vw;
+  display: flex;
+  align-items: center;
+  z-index: 6;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  visibility: hidden;
+  font-family: sans-serif;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.byronBayson:hover ~ .byronBaysonTxt {
+  visibility: visible;
+  transform: scale(1.1);
+}
+
+/*Posisjonering, styling og animasjon for de som spiller volleyball*/
+.playingVolleyball {
+  width: 40%;
+  height: 50%;
+  position: absolute;
+  top: 45vh;
+  left: 30vw;
+  display: flex;
+  z-index: 5;
+}
+@keyframes peoplePlayingVolleyball {
+  0% {
+    left: 65vw;
+  }
+  45% {
+    top: 52vh;
+  }
+
+  70% {
+    top: 70vh;
+    left: 39vw;
+  }
+  85% {
+    top: 50vh;
+  }
+
+  100% {
+    left: 20vw;
+    top: 80vh;
+  }
+}
+
+/*Posisjonering, styling og animasjon for sanden og havet på dagtid*/
+.waterDay {
+  width: 100vw;
+  height: 7vh;
+  background: rgb(254, 240, 201);
+  background: radial-gradient(
+    circle,
+    rgba(254, 240, 201, 1) 0%,
+    rgba(128, 176, 164, 1) 30%,
+    rgb(0, 250, 229) 100%
+  );
+  position: absolute;
+  top: 75%;
+  display: flex;
+  z-index: 1;
+}
+.waterReflection {
+  opacity: 40%;
+  width: 150vw;
+  height: 7vh;
+  position: absolute;
+  top: 75vh;
+  display: flex;
+  z-index: 1;
+  animation: wavesAnimation 10s infinite;
+}
+@keyframes wavesAnimation {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: -25%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+.sandDay {
+  width: 100vw;
+  height: 20vh;
+  background: rgb(67, 30, 21);
+  background: linear-gradient(
+    0deg,
+    rgba(67, 30, 21, 1) 2%,
+    rgba(255, 220, 166, 1) 80%,
+    rgba(254, 240, 201, 1) 100%
+  );
+  position: absolute;
+  top: 80%;
+}
+.sandEffect {
+  opacity: 20%;
+  width: 100vw;
+  height: 20vh;
+}
+
+/*Styling for nighttime*/
+.night {
+  background: rgb(217, 172, 54);
+  background: linear-gradient(
+    0deg,
+    rgba(217, 172, 54, 1) 0%,
+    rgba(214, 116, 43, 1) 60%,
+    rgba(67, 30, 21, 1) 100%
+  );
+}
+
+.sunset {
+  position: absolute;
+  left: 40vw;
+  top: 135vh;
+  width: 20%;
+  height: 40%;
+  background-color: rgb(251, 227, 91);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/*Posisjonering og styling av aktivitetenes overskrift og tekst elementer på dagtid */
+.activitiesNight {
+  width: 80vw;
+  height: 20vh;
+  position: absolute;
+  top: 110vh;
+  left: 25vw;
+  display: flex;
+  z-index: 7;
+  flex-direction: row;
+  column-gap: 10rem;
+  color: gold;
+  cursor: default;
+}
+.activityTxtNight1 {
+  width: 18vw;
+  height: 12vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: -8vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTxtNight2 {
+  width: 20vw;
+  height: 10vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 14vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTxtNight3 {
+  width: 18vw;
+  height: 8vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 38vw;
+  z-index: 7;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+.activityTitleNight1:hover ~ .activityTxtNight1,
+.activityTitleNight2:hover ~ .activityTxtNight2,
+.activityTitleNight3:hover ~ .activityTxtNight3 {
+  visibility: visible;
+  transform: scale(1.2);
+}
+
+/*Posisjonering og styling av palmetreet og koalan som henger på treet*/
+.palmtreeNight {
+  width: 30%;
+  position: absolute;
+  top: 140vh;
+  left: 70vw;
+  display: flex;
+  z-index: 3;
+}
+
+.koala {
+  width: 7%;
+  position: absolute;
+  top: 160vh;
+  left: 81vw;
+  display: flex;
+  z-index: 3;
+}
+.koalaTxt {
+  width: 10%;
+  height: 15%;
+  background-color: rgb(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: absolute;
+  top: 165vh;
+  left: 70vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+  padding: 10px;
+  visibility: hidden;
+  transition: 1s;
+}
+.koala:hover ~ .koalaTxt {
+  visibility: visible;
+  transform: scale(1.2);
+}
+
+/*Posisjonering og styling av Uluru fjellet nattid */
+.uluruNight {
+  position: absolute;
+  width: 60%;
+  top: 141vh;
+  left: -15vw;
+  display: flex;
+  z-index: 1;
+}
+
+/*Posisjonering, styling og animasjon for Byron på nattid */
+.byronBaysonNight {
+  width: 17%;
+  position: absolute;
+  top: 159vh;
+  left: -20vw;
+  display: flex;
+  z-index: 5;
+  transform: scaleX(-1);
+  animation: byronAppearsAnimation 3s forwards;
+  animation-delay: 30s;
+}
+.byronBaysonTxtNight {
+  width: 12%;
+  height: 12%;
+  position: absolute;
+  top: 155vh;
+  left: 10vw;
+  display: flex;
+  align-items: center;
+  z-index: 6;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  visibility: hidden;
+  font-family: sans-serif;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.byronBaysonNight:hover ~ .byronBaysonTxtNight {
+  visibility: visible;
+  transform: scale(1.2);
+}
+@keyframes byronAppearsAnimation {
+  0% {
+    left: -20vw;
+  }
+  100% {
+    left: 3vw;
+  }
+}
+
+/*Posisjonering, animasjon og styling av menneskene som danser rundt bålet*/
+.dancingPeople {
+  width: 30%;
+  position: absolute;
+  top: 160vh;
+  left: 40vw;
+  display: flex;
+  z-index: 3;
+  animation: dancingPeople 1s infinite;
+}
+@keyframes dancingPeople {
+  0% {
+    top: 160vh;
+  }
+
+  50% {
+    top: 162vh;
+  }
+
+  100% {
+    top: 160vh;
+  }
+}
+
+.campfire {
+  width: 10%;
+  position: absolute;
+  top: 179vh;
+  left: 50vw;
+  display: flex;
+  z-index: 3;
+}
+
+/*Posisjonering og styling av billboardet for å gå videre til arrangement siden*/
+.billboard {
+  width: 60%;
+  height: 80%;
+  position: relative;
+  top: 25vh;
+  left: 2vh;
+  display: flex;
+  z-index: 4;
+}
+.billboardBox {
+  width: 20.5vw;
+  height: 19vh;
+  position: absolute;
+  top: 9.2vh;
+  left: 10vw;
+  background-color: black;
+  display: flex;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+.billboardTxt {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation: billboardTxtPulsate 2s infinite;
+  color: white;
+}
+span {
+  color: blueviolet;
+  font-family: BullettoKilla;
+}
+a {
+  display: flex;
+  z-index: 5;
+  text-decoration: none;
+}
+@keyframes billboardTxtPulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*Posisjonering, styling og animasjon for sanden og havet på nattid*/
+.waterNight {
+  top: 180vh;
+  width: 100vw;
+  height: 7vh;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(255, 227, 104) 30%,
+    rgb(255, 179, 49) 96%
+  );
+  display: flex;
+  z-index: 2;
+}
+.waterReflectionNight {
+  opacity: 40%;
+  width: 200vw;
+  height: 7vh;
+  position: absolute;
+  top: 180vh;
+  display: flex;
+  z-index: 2;
+  animation: wavesAnimation 10s infinite;
+}
+.sandNight {
+  width: 100vw;
+  height: 25vh;
+  background: rgb(214, 84, 43);
+  background: radial-gradient(
+    circle,
+    rgba(214, 84, 43, 1) 45%,
+    rgba(67, 41, 21, 1) 100%
+  );
+  position: absolute;
+  top: 180%;
+}
+.sandNightEffect {
+  opacity: 20%;
+  width: 100vw;
+  height: 24.5vh;
+}
+
+/*Font-familyen vi bruker på alle overskrifter*/
+@font-face {
+  font-family: BullettoKilla;
+  src: url(../fonts/Bulletto\Killa.ttf);
+}
