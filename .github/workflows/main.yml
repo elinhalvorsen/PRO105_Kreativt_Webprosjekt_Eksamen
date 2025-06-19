@@ -3,28 +3,26 @@ on:
     branches:
       - main
 
-jobs:
-  publish:
-    runs-on: ubuntu-latest
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      id-token: write # to verify the deployment originates from an appropriate
-      pages: write # to deploy to Pages
-      contents: read # to checkout private repositories
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout kode
+        uses: actions/checkout@v4
+
+      - name: Last opp statiske filer
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: 20.x
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-      - uses: actions/deploy-pages@v4
+          path: .  # Bruker rotnivået – endre om filene dine ligger i f.eks. ./docs
+
+      - name: Deploy til GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
